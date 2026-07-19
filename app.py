@@ -59,12 +59,12 @@ strategy_filter = st.radio(
 
 st.markdown("---")
 
-# Filter logic mapping
+# Filter logic mapping (Fixed bracket error here)
 color_map = {
     "🟢 Green (No-Bolus / Low Carb)": "Green",
     "🟡 Yellow (Steady / Complex)": "Yellow",
     "🔴 Orange (Fast Carbs / Athletic)": "Orange"
-)
+}
 
 # Display Meals
 filtered_meals = meal_db[time_category]
