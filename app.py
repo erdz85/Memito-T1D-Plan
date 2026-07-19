@@ -20,9 +20,9 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# App Header
-st.markdown('<div class="main-title">🎒 Back-to-School T1D Planner</div>', unsafe_style_html=True)
-st.markdown('<div class="subtitle">Predictable Carbs & Smart-Dosing for the Omnipod 5</div>', unsafe_style_html=True)
+# App Header (Fixed parameters here)
+st.markdown('<div class="main-title">🎒 Back-to-School T1D Planner</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Predictable Carbs & Smart-Dosing for the Omnipod 5</div>', unsafe_allow_html=True)
 
 # Shared Database of Meals
 meal_db = {
@@ -59,7 +59,7 @@ strategy_filter = st.radio(
 
 st.markdown("---")
 
-# Filter logic mapping (Fixed bracket error here)
+# Filter logic mapping
 color_map = {
     "🟢 Green (No-Bolus / Low Carb)": "Green",
     "🟡 Yellow (Steady / Complex)": "Yellow",
@@ -88,7 +88,7 @@ for meal in filtered_meals:
         style_class = "card-orange"
         badge = "🔴 ACTION REQUIRED"
         
-    # Render Custom Card UI
+    # Render Custom Card UI (Ensured unsafe_allow_html=True here as well)
     st.markdown(f"""
     <div class="{style_class}">
         <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -101,7 +101,7 @@ for meal in filtered_meals:
             ℹ️ <strong>Pump Dosing Advice:</strong> {meal['guide']}
         </div>
     </div>
-    """, unsafe_style_html=True)
+    """, unsafe_allow_html=True)
 
 if visible_meals == 0:
     st.info("No meals matching this color filter for this time block. Try choosing another category above!")
