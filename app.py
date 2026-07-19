@@ -18,7 +18,7 @@ st.markdown("""
     .card-orange { background-color: #fff5f5; border-left: 5px solid #742a2a; padding: 12px; border-radius: 4px; margin-bottom: 10px; }
     .badge-text { font-weight: bold; font-size: 12px; }
 </style>
-""", unsafe_style_html=True)
+""", unsafe_allow_html=True)
 
 # App Header
 st.markdown('<div class="main-title">🎒 Back-to-School T1D Planner</div>', unsafe_style_html=True)
